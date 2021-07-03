@@ -1,0 +1,34 @@
+﻿@model IEnumerable<AkijFood.Models.FoodClass>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cold Drinks List</h1>
+
+<
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.StrColdDrinksName)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.StrColdDrinksName)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+

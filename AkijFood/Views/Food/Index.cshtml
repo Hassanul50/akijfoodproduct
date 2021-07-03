@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AkijFood.Models.FoodClass>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cold Drinks List</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Add New Item</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IntColdDrinkId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrColdDrinksName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumUnitPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntColdDrinkId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrColdDrinksName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumUnitPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "Edit", new { id = item.IntColdDrinkId }, new {@class="btn btn-primary" }) |
+
+                @Html.ActionLink("Delete", "Delete", new {  id=item.IntColdDrinkId  }, new {@class= "btn btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="RemainProduct" class="btn btn-dark">Remaining product </a>
+</p>
